@@ -62,39 +62,17 @@
             </li>
             <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
             <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="services.html" role="button" data-bs-toggle="dropdown">Services</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="services.html">All Services Overview</a></li>
-                <li><hr class="dropdown-divider my-1"></li>
-                <li><a class="dropdown-item" href="service-details/fresh-tender-coconut-supply.html">Tender Coconut Supply</a></li>
-                <li><a class="dropdown-item" href="service-details/fresh-juice-preparation.html">Fresh Juice Preparation</a></li>
-                <li><a class="dropdown-item" href="service-details/event-party-catering.html">Event &amp; Party Catering</a></li>
-                <li><a class="dropdown-item" href="service-details/corporate-beverage-catering.html">Corporate Catering</a></li>
-                <li><a class="dropdown-item" href="service-details/bulk-coconut-orders.html">Bulk Coconut Orders</a></li>
-                <li><a class="dropdown-item" href="service-details/customized-fresh-juice-packages.html">Custom Juice Packages</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="blog.html" role="button" data-bs-toggle="dropdown">Blog</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="blog.html">Blog Articles Listing</a></li>
-                <li><hr class="dropdown-divider my-1"></li>
-                <li><a class="dropdown-item" href="blog-details/coconut-water-electrolytes-hydration-science.html">Coconut Water Science</a></li>
-                <li><a class="dropdown-item" href="blog-details/cold-pressed-vs-centrifugal-juicing-guide.html">Cold-Pressed Guide</a></li>
-                <li><a class="dropdown-item" href="blog-details/sustainable-coconut-farming-pollachi-farms.html">Sustainable Farming</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item active" href="about.html">About Us</a></li>
-                <li><a class="dropdown-item" href="pricing.html">Pricing Packages</a></li>
-                <li><a class="dropdown-item" href="locations.html">Our Juice Bars</a></li>
-                <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
-                <li><hr class="dropdown-divider my-1"></li>
                 <li><a class="dropdown-item" href="404.html">404 Error Page</a></li>
                 <li><a class="dropdown-item" href="coming-soon.html">Coming Soon Page</a></li>
                 <li><a class="dropdown-item" href="maintenance.html">Maintenance Page</a></li>
@@ -118,7 +96,7 @@
   <div class="offcanvas offcanvas-end tj-mobile-menu" tabindex="-1" id="tjMobileNav">
     <div class="offcanvas-header border-bottom">
       <a href="index.html" class="offcanvas-title"><img src="assets/images/logo.svg" alt="TenderJoy" height="40"></a>
-      <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas"></button>
+      <button type="button" class="tj-mobile-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <ul class="navbar-nav">
@@ -133,37 +111,38 @@
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
       </ul>
       <div class="mt-4 pt-3 border-top">
-        <div class="d-flex align-items-center justify-content-between mb-3">
-          <span class="fw-semibold">Color Theme:</span>
-          <button class="btn-ctrl theme-toggle-btn"><i class="bi bi-moon-stars-fill"></i></button>
-        </div>
-        <div class="d-flex align-items-center justify-content-between mb-4">
-          <span class="fw-semibold">Direction:</span>
-          <button class="btn-ctrl btn-ctrl-rtl rtl-toggle-btn"><span class="dir-label">RTL</span></button>
-        </div>
-        <a href="menu.html" class="btn-tj btn-tj-primary w-100 justify-content-center">Order Fresh</a>
+        <a href="menu.html" class="btn-tj btn-tj-primary w-100 justify-content-center tj-mobile-order">Order Fresh</a>
       </div>
     </div>
   </div>
 
   <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="container text-center">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb justify-content-center mb-2">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">About Us</li>
-        </ol>
-      </nav>
-      <h1 class="display-5 fw-bold mb-2">Our Story, Farms &amp; Values</h1>
-      <p class="section-subtitle mx-auto">
-        Dedicated to bringing authentic farm-to-sip purity, regenerative agriculture, and unpasteurized tropical refreshment to everyday life.
-      </p>
+  <section class="tj-hero-page" style="--hero-image: url('https://images.unsplash.com/flagged/photo-1560505761-b46fb3d231bf?auto=format&fit=crop&w=1600&q=90')">
+    <div class="container">
+      <div class="tj-hero-page-grid">
+        <div class="tj-hero-copy">
+          <nav aria-label="breadcrumb" class="tj-reveal">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Our origin</li>
+            </ol>
+          </nav>
+          <div class="tj-hero-kicker tj-reveal">Our origin</div>
+          <h1 class="tj-reveal">Our Story Begins with Nature.</h1>
+          <p class="lead tj-reveal">Discover our passion for fresh coconuts, natural ingredients, and creating refreshing experiences for everyone.</p>
+          <div class="d-flex flex-wrap gap-3 tj-reveal"><a href="#story" class="btn-tj btn-tj-primary btn-tj-lg"><span>Discover Our Story</span><i class="bi bi-arrow-down"></i></a><a href="locations.html" class="btn-tj btn-tj-outline btn-tj-lg"><i class="bi bi-geo-alt-fill"></i><span>Visit Our Bars</span></a></div>
+          <strong>Farm to sip</strong><span>Traceable coconuts, harvested with care.</span>
+        </div>
+        <div class="tj-hero-media tj-reveal">
+          <img src="https://images.unsplash.com/flagged/photo-1560505761-b46fb3d231bf?auto=format&fit=crop&w=1600&q=90" alt="Fresh green coconut and coconut water" loading="eager">
+          <div class="tj-hero-floating-card tj-reveal"></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Brand Introduction & Origin Story -->
-  <section class="section-padding">
+  <section class="section-padding" id="story">
     <div class="container">
       <div class="row align-items-center gy-5">
         <div class="col-lg-6">
@@ -192,7 +171,7 @@
 
         <div class="col-lg-6">
           <div class="position-relative">
-            <img src="https://images.unsplash.com/photo-1544378730-8b5104b18790?auto=format&fit=crop&w=1000&q=80" alt="Fresh green tender coconuts in farm" class="rounded-4 w-100 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=1000&q=80" alt="Fresh tropical drink at the source" class="rounded-4 w-100 shadow-lg" loading="lazy">
             <div class="position-absolute bottom-0 end-0 m-4 p-3 bg-tj-surface rounded-3 border border-light shadow d-none d-sm-block">
               <span class="badge-tag badge-accent mb-1">Quality Certified</span>
               <div class="fw-bold text-tj-primary">Surgical Stainless Steel Cutters</div>

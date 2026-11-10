@@ -9,7 +9,7 @@
   
   <meta property="og:type" content="website">
   <meta property="og:title" content="TenderJoy Complete Beverage Menu">
-  <meta property="og:description" content="14+ handcrafted fresh tender coconut and fruit juice creations. Filter by category, search by ingredient, or sort by price.">
+  <meta property="og:description" content="12 handcrafted fresh tender coconut and fruit juice creations. Filter by category, search by ingredient, or sort by price.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1544378730-8b5104b18790?auto=format&fit=crop&w=1200&q=80">
   
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
@@ -62,39 +62,17 @@
             </li>
             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
             <li class="nav-item"><a class="nav-link active" href="menu.html">Menu</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="services.html" role="button" data-bs-toggle="dropdown">Services</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="services.html">All Services Overview</a></li>
-                <li><hr class="dropdown-divider my-1"></li>
-                <li><a class="dropdown-item" href="service-details/fresh-tender-coconut-supply.html">Tender Coconut Supply</a></li>
-                <li><a class="dropdown-item" href="service-details/fresh-juice-preparation.html">Fresh Juice Preparation</a></li>
-                <li><a class="dropdown-item" href="service-details/event-party-catering.html">Event &amp; Party Catering</a></li>
-                <li><a class="dropdown-item" href="service-details/corporate-beverage-catering.html">Corporate Catering</a></li>
-                <li><a class="dropdown-item" href="service-details/bulk-coconut-orders.html">Bulk Coconut Orders</a></li>
-                <li><a class="dropdown-item" href="service-details/customized-fresh-juice-packages.html">Custom Juice Packages</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="blog.html" role="button" data-bs-toggle="dropdown">Blog</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="blog.html">Blog Articles Listing</a></li>
-                <li><hr class="dropdown-divider my-1"></li>
-                <li><a class="dropdown-item" href="blog-details/coconut-water-electrolytes-hydration-science.html">Coconut Water Science</a></li>
-                <li><a class="dropdown-item" href="blog-details/cold-pressed-vs-centrifugal-juicing-guide.html">Cold-Pressed Guide</a></li>
-                <li><a class="dropdown-item" href="blog-details/sustainable-coconut-farming-pollachi-farms.html">Sustainable Farming</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                <li><a class="dropdown-item" href="pricing.html">Pricing Packages</a></li>
-                <li><a class="dropdown-item" href="locations.html">Our Juice Bars</a></li>
-                <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
-                <li><hr class="dropdown-divider my-1"></li>
                 <li><a class="dropdown-item" href="404.html">404 Error Page</a></li>
                 <li><a class="dropdown-item" href="coming-soon.html">Coming Soon Page</a></li>
                 <li><a class="dropdown-item" href="maintenance.html">Maintenance Page</a></li>
@@ -118,7 +96,7 @@
   <div class="offcanvas offcanvas-end tj-mobile-menu" tabindex="-1" id="tjMobileNav">
     <div class="offcanvas-header border-bottom">
       <a href="index.html" class="offcanvas-title"><img src="assets/images/logo.svg" alt="TenderJoy" height="40"></a>
-      <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas"></button>
+      <button type="button" class="tj-mobile-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <ul class="navbar-nav">
@@ -132,32 +110,30 @@
         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing &amp; Packages</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
       </ul>
-      <div class="mt-4 pt-3 border-top">
-        <div class="d-flex align-items-center justify-content-between mb-3">
-          <span class="fw-semibold">Color Theme:</span>
-          <button class="btn-ctrl theme-toggle-btn"><i class="bi bi-moon-stars-fill"></i></button>
-        </div>
-        <div class="d-flex align-items-center justify-content-between mb-4">
-          <span class="fw-semibold">Direction:</span>
-          <button class="btn-ctrl btn-ctrl-rtl rtl-toggle-btn"><span class="dir-label">RTL</span></button>
-        </div>
-      </div>
     </div>
   </div>
 
   <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="container text-center">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb justify-content-center mb-2">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Menu</li>
-        </ol>
-      </nav>
-      <h1 class="display-5 fw-bold mb-2">Botanical Beverage Menu</h1>
-      <p class="section-subtitle mx-auto">
-        100% raw, unpasteurized, zero added sugar. Clean hydration crafted fresh to your order with surgical hygiene.
-      </p>
+  <section class="tj-hero-page tj-hero-page--dark" style="--hero-image: url('https://images.unsplash.com/flagged/photo-1560505761-b46fb3d231bf?auto=format&fit=crop&w=1600&q=90')">
+    <div class="container">
+      <div class="tj-hero-page-grid">
+        <div class="tj-hero-copy">
+          <nav aria-label="breadcrumb" class="tj-reveal">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">The fresh menu</li>
+            </ol>
+          </nav>
+          <div class="tj-hero-kicker tj-reveal">The fresh menu</div>
+          <h1 class="tj-reveal">Freshness Crafted for Every Sip.</h1>
+          <p class="lead tj-reveal">Explore our refreshing collection of tender coconut water, freshly squeezed juices, and signature tropical beverages.</p>
+          <div class="d-flex flex-wrap gap-3 tj-reveal"><a href="#menu-items-grid" class="btn-tj btn-tj-accent btn-tj-lg"><span>Explore Fresh Drinks</span><i class="bi bi-arrow-down"></i></a><a href="#menu-items-grid" class="btn-tj btn-tj-outline-white btn-tj-lg"><i class="bi bi-stars"></i><span>Today's Specials</span></a></div>
+          <strong>100% raw</strong><span>No syrups. No shortcuts. Just real ingredients.</span>
+        </div>
+        <div class="tj-hero-media tj-reveal">
+          <img src="https://images.unsplash.com/flagged/photo-1560505761-b46fb3d231bf?auto=format&fit=crop&w=1600&q=90" alt="Fresh tender coconut and tropical beverages" loading="eager">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -166,7 +142,7 @@
     <div class="container">
       
       <!-- Search & Sorting Row -->
-      <div class="row align-items-center justify-content-between mb-4 g-3">
+      <div class="row align-items-center justify-content-between mb-4 g-3 menu-controls">
         <div class="col-md-7 col-lg-6">
           <div class="search-box m-0 w-100 max-w-none">
             <i class="bi bi-search"></i>
@@ -187,8 +163,8 @@
       </div>
 
       <!-- Category Filter Tabs -->
-      <div class="filter-tabs mb-5">
-        <button class="filter-btn active" data-menu-filter="all">All Beverages (14)</button>
+      <div class="filter-tabs mb-5 menu-filter-tabs">
+        <button class="filter-btn active" data-menu-filter="all">All Beverages (12)</button>
         <button class="filter-btn" data-menu-filter="tender-coconut">Fresh Tender Coconut</button>
         <button class="filter-btn" data-menu-filter="coconut-water">Coconut Water</button>
         <button class="filter-btn" data-menu-filter="fresh-fruit">Fresh Fruit Juices</button>
@@ -308,7 +284,7 @@
           <div class="tj-card product-card">
             <div class="product-img-wrap">
               <span class="badge-tag product-badge-float">Fiber &amp; Energy</span>
-              <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80" alt="Chia Seed Coconut Water">
+              <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=800&q=80" alt="Chia Seed Coconut Water">
               <span class="product-price-pill">&#8377;90</span>
             </div>
             <div class="product-body">
@@ -403,7 +379,7 @@
           <div class="tj-card product-card">
             <div class="product-img-wrap">
               <span class="badge-tag product-badge-float">Skin Nutrition</span>
-              <img src="https://images.unsplash.com/photo-1546833998-877b37c2e5c6?auto=format&fit=crop&w=800&q=80" alt="ABC Vitality Glow">
+              <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=800&q=80" alt="Fresh apple beetroot carrot juice">
               <span class="product-price-pill">&#8377;130</span>
             </div>
             <div class="product-body">
@@ -430,44 +406,6 @@
               <h3 class="product-title"><a href="product-details/creamy-coconut-cold-brew.html">Coconut Cold Brew</a></h3>
               <p class="product-desc">16-hour steeped Chikmagalur cold brew mixed with freshly squeezed rich coconut milk and coconut nectar.</p>
               <a href="product-details/creamy-coconut-cold-brew.html" class="btn-tj btn-tj-outline btn-tj-sm w-100">
-                <span>View Details</span><i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 13. Coconut Mojito Mocktail -->
-        <div class="col-md-6 col-lg-3 product-item-col" data-category="tropical-drinks" data-price="110">
-          <div class="tj-card product-card">
-            <div class="product-img-wrap">
-              <span class="badge-tag badge-accent product-badge-float">Cocktail Bar Craft</span>
-              <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80" alt="Coconut Mojito Mocktail">
-              <span class="product-price-pill">&#8377;110</span>
-            </div>
-            <div class="product-body">
-              <span class="product-category">Special Tropical Drinks</span>
-              <h3 class="product-title"><a href="product-details/coconut-mojito-mocktail.html">Coconut Mojito Cooler</a></h3>
-              <p class="product-desc">Muddled mint, key lime, coconut blossom drops, sweet tender coconut water, and a touch of effervescence.</p>
-              <a href="product-details/coconut-mojito-mocktail.html" class="btn-tj btn-tj-outline btn-tj-sm w-100">
-                <span>View Details</span><i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 14. Alphonso Mango Coconut Cream -->
-        <div class="col-md-6 col-lg-3 product-item-col" data-category="seasonal" data-price="160">
-          <div class="tj-card product-card">
-            <div class="product-img-wrap">
-              <span class="badge-tag badge-accent product-badge-float">Summer Special</span>
-              <img src="https://images.unsplash.com/photo-1546833998-877b37c2e5c6?auto=format&fit=crop&w=800&q=80" alt="Alphonso Mango Coconut Cream">
-              <span class="product-price-pill">&#8377;160</span>
-            </div>
-            <div class="product-body">
-              <span class="product-category">Seasonal Specials</span>
-              <h3 class="product-title"><a href="product-details/alphonso-mango-coconut-cream.html">Alphonso Mango Cream</a></h3>
-              <p class="product-desc">Tree-ripened Ratnagiri mango pulp churned with thick coconut cream and garnished with crisp coconut curls.</p>
-              <a href="product-details/alphonso-mango-coconut-cream.html" class="btn-tj btn-tj-outline btn-tj-sm w-100">
                 <span>View Details</span><i class="bi bi-arrow-right"></i>
               </a>
             </div>

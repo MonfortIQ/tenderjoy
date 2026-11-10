@@ -7,6 +7,168 @@ document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   /* ------------------------------------------------------------------------
+     Shared Premium Footer
+     ------------------------------------------------------------------------ */
+  const footerIsNested = /\/(?:product-details|service-details|blog-details)\//.test(window.location.pathname.replace(/\\/g, '/'));
+  const footerPrefix = footerIsNested ? '../' : '';
+  const footerPath = path => `${footerPrefix}${path}`;
+  const footerSocialLinks = {
+    instagram: 'https://www.instagram.com/tenderjoyjuices/',
+    facebook: 'https://www.facebook.com/tenderjoyjuices/',
+    x: 'https://x.com/tenderjoyjuices',
+    youtube: 'https://www.youtube.com/@tenderjoyjuices'
+  };
+  const currentFooter = document.querySelector('footer');
+
+  if (currentFooter) {
+    const premiumFooter = document.createElement('footer');
+    premiumFooter.id = 'premium-footer';
+    premiumFooter.className = 'tj-footer tj-footer-premium';
+    premiumFooter.innerHTML = `
+      <div class="tj-footer-glow" aria-hidden="true"></div>
+      <div class="container position-relative">
+        <section class="tj-footer-newsletter tj-reveal" aria-labelledby="footer-newsletter-title">
+          <div>
+            <span class="tj-footer-eyebrow">Fresh from the grove</span>
+            <h2 id="footer-newsletter-title">Stay Fresh with TenderJoy.</h2>
+            <p>Get updates on fresh arrivals, seasonal drinks, and special offers.</p>
+          </div>
+          <form action="https://formsubmit.co/hello@tenderjoyjuices.com" method="POST" class="tj-footer-newsletter-form tj-ajax-form">
+            <input type="hidden" name="_subject" value="New TenderJoy Newsletter Subscriber">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <label class="visually-hidden" for="footer-newsletter-email">Email address</label>
+            <input id="footer-newsletter-email" type="email" name="email" placeholder="Your email address" required>
+            <button type="submit" class="btn-tj btn-tj-accent"><span>Subscribe</span><i class="bi bi-arrow-up-right"></i></button>
+            <small>By subscribing, you agree to receive occasional TenderJoy updates.</small>
+          </form>
+        </section>
+
+        <div class="tj-footer-grid">
+          <section class="tj-footer-brand tj-reveal">
+            <a href="${footerPath('index.html')}" class="tj-footer-logo-link">
+              <img class="tj-footer-logo site-logo-img" src="${footerPath('assets/images/logo-light.svg')}" data-logo-light="${footerPath('assets/images/logo.svg')}" data-logo-dark="${footerPath('assets/images/logo-light.svg')}" alt="TenderJoy – Tender Coconut & Fresh Juice">
+            </a>
+            <p class="tj-footer-tagline">Nature's Freshness in Every Sip.</p>
+            <span class="tj-footer-rule" aria-hidden="true"></span>
+            <p class="tj-footer-copy">TenderJoy is an artisanal tender coconut and fresh juice brand dedicated to delivering nature's purest hydration through fresh ingredients, careful preparation, and sustainable practices.</p>
+            <div class="tj-footer-socials" aria-label="Social media">
+              <a href="${footerSocialLinks.instagram}" target="_blank" rel="noopener noreferrer" class="tj-footer-social" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="${footerSocialLinks.facebook}" target="_blank" rel="noopener noreferrer" class="tj-footer-social" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="${footerSocialLinks.x}" target="_blank" rel="noopener noreferrer" class="tj-footer-social" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+              <a href="${footerSocialLinks.youtube}" target="_blank" rel="noopener noreferrer" class="tj-footer-social" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </section>
+
+          <section class="tj-footer-column tj-reveal">
+            <h2>Quick Explore</h2>
+            <ul class="tj-footer-links">
+              <li><a href="${footerPath('index.html')}">Home 1 – Landing</a></li>
+              <li><a href="${footerPath('home-2.html')}">Home 2 – Juice Bar</a></li>
+              <li><a href="${footerPath('about.html')}">About Us</a></li>
+              <li><a href="${footerPath('about.html#story')}">Our Story &amp; Farms</a></li>
+              <li><a href="${footerPath('menu.html')}">Fresh Beverage Menu</a></li>
+              <li><a href="${footerPath('pricing.html')}">Pricing &amp; Packages</a></li>
+              <li><a href="${footerPath('locations.html')}">Juice Bar Locations</a></li>
+              <li><a href="${footerPath('contact.html')}">Contact Us</a></li>
+            </ul>
+          </section>
+
+          <section class="tj-footer-column tj-reveal">
+            <h2>Services &amp; Catering</h2>
+            <ul class="tj-footer-links">
+              <li><a href="${footerPath('service-details/fresh-tender-coconut-supply.html')}">Tender Coconut Supply</a></li>
+              <li><a href="${footerPath('service-details/fresh-juice-preparation.html')}">Live Juice Preparation</a></li>
+              <li><a href="${footerPath('service-details/event-party-catering.html')}">Wedding &amp; Party Catering</a></li>
+              <li><a href="${footerPath('service-details/corporate-beverage-catering.html')}">Corporate Office Catering</a></li>
+              <li><a href="${footerPath('service-details/bulk-coconut-orders.html')}">Bulk Coconut Orders</a></li>
+              <li><a href="${footerPath('service-details/customized-fresh-juice-packages.html')}">Custom Juice Packages</a></li>
+            </ul>
+          </section>
+
+          <section class="tj-footer-column tj-footer-contact tj-reveal">
+            <h2>Get in Touch</h2>
+            <a href="https://maps.google.com/maps?q=100+Feet+Road+Indiranagar+Bengaluru" target="_blank" rel="noopener" class="tj-footer-contact-row"><i class="bi bi-geo-alt-fill"></i><span>100 Feet Road, Indiranagar,<br>Bengaluru, KA 560038</span></a>
+            <a href="tel:+919845012345" class="tj-footer-contact-row"><i class="bi bi-telephone-fill"></i><span>+91 98450 12345</span></a>
+            <a href="mailto:hello@tenderjoyjuices.com" class="tj-footer-contact-row"><i class="bi bi-envelope-fill"></i><span>hello@tenderjoyjuices.com</span></a>
+            <div class="tj-footer-hours">
+              <i class="bi bi-clock-fill"></i>
+              <div><strong>Opening Hours</strong><span>Monday – Sunday</span><span>7:00 AM – 10:30 PM</span></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="tj-footer-bottom">
+          <span>© 2026 TenderJoy Beverages Pvt. Ltd. All rights reserved.</span>
+          <nav aria-label="Legal links"><a href="${footerPath('404.html')}">Privacy Policy</a><a href="${footerPath('404.html')}">Terms of Service</a><a href="${footerPath('contact.html')}">Support</a></nav>
+        </div>
+      </div>
+    `;
+    currentFooter.replaceWith(premiumFooter);
+  }
+
+  if (!document.querySelector('.back-to-top')) {
+    document.body.insertAdjacentHTML('beforeend', '<a href="#" class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>');
+  }
+
+  /* Add the shared controls to every visible desktop navbar. */
+  document.querySelectorAll('.tj-navbar').forEach(navbar => {
+    navbar.querySelectorAll('a.nav-link[href$="locations.html"]').forEach(link => {
+      link.closest('.nav-item')?.remove();
+    });
+
+    if (navbar.querySelector('.tj-navbar-controls')) return;
+
+    const controls = document.createElement('div');
+    controls.className = 'tj-navbar-controls d-none d-lg-flex align-items-center gap-2';
+    controls.innerHTML = `
+      <button class="btn-ctrl btn-ctrl-rtl rtl-toggle-btn" type="button" aria-label="Toggle text direction" title="Switch to Right to Left">
+        <span class="dir-label">RTL</span>
+      </button>
+      <button class="btn-ctrl theme-toggle-btn" type="button" aria-label="Switch to Dark Mode" title="Switch to Dark Mode">
+        <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+      </button>
+    `;
+
+    const actionGroup = navbar.querySelector(':scope > .d-lg-flex');
+    if (actionGroup) {
+      actionGroup.parentNode.insertBefore(controls, actionGroup);
+    } else {
+      navbar.appendChild(controls);
+    }
+  });
+
+  document.querySelectorAll('.tj-mobile-menu a.nav-link[href$="locations.html"]').forEach(link => {
+    link.closest('.nav-item')?.remove();
+  });
+
+  document.querySelectorAll('.tj-mobile-menu .theme-toggle-btn').forEach(button => {
+    button.setAttribute('aria-label', 'Toggle color theme');
+    button.setAttribute('title', 'Toggle color theme');
+  });
+
+  document.querySelectorAll('.tj-mobile-menu .rtl-toggle-btn').forEach(button => {
+    button.setAttribute('aria-label', 'Toggle text direction');
+    button.setAttribute('title', 'Toggle text direction');
+  });
+
+  document.querySelectorAll('.tj-mobile-menu').forEach(mobileMenu => {
+    if (mobileMenu.querySelector('.tj-mobile-order')) return;
+
+    const orderLink = document.createElement('a');
+    orderLink.className = 'btn-tj btn-tj-primary w-100 justify-content-center tj-mobile-order';
+    orderLink.href = footerPath('menu.html');
+    orderLink.innerHTML = '<i class="bi bi-cup-straw"></i><span>Order Fresh</span>';
+
+    const actionPanel = mobileMenu.querySelector('.offcanvas-body > .mt-4.pt-3.border-top');
+    if (actionPanel) {
+      actionPanel.appendChild(orderLink);
+    } else {
+      mobileMenu.querySelector('.offcanvas-body')?.appendChild(orderLink);
+    }
+  });
+
+  /* ------------------------------------------------------------------------
      1. Theme Switcher (Light / Dark) with Persistence
      ------------------------------------------------------------------------ */
   const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
@@ -144,9 +306,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const category = card.dataset.category || '';
         const title = (card.querySelector('.product-title')?.textContent || '').toLowerCase();
         const desc = (card.querySelector('.product-desc')?.textContent || '').toLowerCase();
+        const categoryLabel = (card.querySelector('.product-category')?.textContent || '').toLowerCase();
+        const badge = (card.querySelector('.product-badge-float')?.textContent || '').toLowerCase();
+        const imageAlt = (card.querySelector('img')?.getAttribute('alt') || '').toLowerCase();
 
         const matchesCat = (currentCategory === 'all' || category.toLowerCase() === currentCategory.toLowerCase());
-        const matchesSearch = (!searchQuery || title.includes(searchQuery) || desc.includes(searchQuery));
+        const searchableText = [category, categoryLabel, title, desc, badge, imageAlt].join(' ');
+        const matchesSearch = (!searchQuery || searchableText.includes(searchQuery));
 
         if (matchesCat && matchesSearch) {
           card.style.display = '';
@@ -358,32 +524,85 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ------------------------------------------------------------------------
      9. Form Validation & FormSubmit Loading States
      ------------------------------------------------------------------------ */
+  const today = new Date();
+  const localToday = [
+    today.getFullYear(),
+    String(today.getMonth() + 1).padStart(2, '0'),
+    String(today.getDate()).padStart(2, '0')
+  ].join('-');
+
+  document.querySelectorAll('input[type="date"][name="event_date"]').forEach(dateInput => {
+    dateInput.min = localToday;
+  });
+
   const contactForms = document.querySelectorAll('.tj-ajax-form');
   contactForms.forEach(form => {
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
       if (!form.checkValidity()) {
-        e.preventDefault();
-        e.stopPropagation();
         form.classList.add('was-validated');
         return;
       }
 
-      // Check honeypot field
       const honeypot = form.querySelector('input[name="_honey"]');
-      if (honeypot && honeypot.value.trim() !== '') {
-        e.preventDefault();
-        return;
-      }
+      if (honeypot && honeypot.value.trim() !== '') return;
 
       const submitBtn = form.querySelector('button[type="submit"]');
+      const originalHtml = submitBtn ? submitBtn.innerHTML : '';
+      const subject = form.querySelector('input[name="_subject"]')?.value || '';
+      const isNewsletter = /newsletter|subscriber|fresh club|launch/i.test(subject);
+      const successText = isNewsletter
+        ? 'Subscribed successfully! Thank you for joining TenderJoy.'
+        : 'Sent successfully! Thank you. We will get back to you soon.';
+
+      let status = form.nextElementSibling;
+      if (!status || !status.classList.contains('tj-form-status')) {
+        status = document.createElement('div');
+        status.className = 'tj-form-status';
+        status.setAttribute('role', 'status');
+        status.setAttribute('aria-live', 'polite');
+        form.insertAdjacentElement('afterend', status);
+      }
+
       if (submitBtn) {
         submitBtn.disabled = true;
-        const originalHtml = submitBtn.innerHTML;
         submitBtn.innerHTML = `
           <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-          Transmitting Fresh Order...
+          Sending...
         `;
-        // Let natural form submission happen to FormSubmit endpoint
+      }
+
+      const action = new URL(form.getAttribute('action') || '', window.location.href);
+      if (action.hostname === 'formsubmit.co') {
+        action.pathname = `/ajax${action.pathname}`;
+      }
+
+      try {
+        const response = await fetch(action.toString(), {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        const result = await response.json().catch(() => null);
+
+        if (!response.ok || (result && result.success === false)) {
+          throw new Error('Submission failed');
+        }
+
+        status.className = 'tj-form-status is-success';
+        status.textContent = successText;
+        form.reset();
+        form.classList.remove('was-validated');
+      } catch (error) {
+        status.className = 'tj-form-status is-error';
+        status.textContent = 'Unable to send right now. Please try again or call us directly.';
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalHtml;
+        }
       }
     });
   });
@@ -421,5 +640,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
+  }
+
+  /* ------------------------------------------------------------------------
+     11. Hero Entrance Motion
+     ------------------------------------------------------------------------ */
+  const heroRevealItems = document.querySelectorAll('.tj-reveal');
+  if (heroRevealItems.length) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      heroRevealItems.forEach(item => item.classList.add('is-visible'));
+    } else {
+      const heroObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (!entry.isIntersecting) return;
+          entry.target.style.transitionDelay = `${Math.min(index * 55, 260)}ms`;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12 });
+      heroRevealItems.forEach(item => heroObserver.observe(item));
+    }
   }
 });

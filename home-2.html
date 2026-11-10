@@ -69,32 +69,12 @@
             </li>
             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
             <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="services.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Services
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="services.html">All Services Overview</a></li>
-                <li><hr class="dropdown-divider my-1"></li>
-                <li><a class="dropdown-item" href="service-details/fresh-tender-coconut-supply.html">Tender Coconut Supply</a></li>
-                <li><a class="dropdown-item" href="service-details/fresh-juice-preparation.html">Fresh Juice Preparation</a></li>
-                <li><a class="dropdown-item" href="service-details/event-party-catering.html">Event &amp; Party Catering</a></li>
-                <li><a class="dropdown-item" href="service-details/corporate-beverage-catering.html">Corporate Catering</a></li>
-                <li><a class="dropdown-item" href="service-details/bulk-coconut-orders.html">Bulk Coconut Orders</a></li>
-                <li><a class="dropdown-item" href="service-details/customized-fresh-juice-packages.html">Custom Juice Packages</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="blog.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Blog
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="blog.html">Blog Articles Listing</a></li>
-                <li><hr class="dropdown-divider my-1"></li>
-                <li><a class="dropdown-item" href="blog-details/coconut-water-electrolytes-hydration-science.html">Coconut Water Science</a></li>
-                <li><a class="dropdown-item" href="blog-details/tropical-summer-detox-recipes.html">Tropical Detox Recipes</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
             <li class="nav-item dropdown">
@@ -102,11 +82,6 @@
                 Pages
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                <li><a class="dropdown-item" href="pricing.html">Pricing Packages</a></li>
-                <li><a class="dropdown-item" href="locations.html">Our Juice Bars</a></li>
-                <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
-                <li><hr class="dropdown-divider my-1"></li>
                 <li><a class="dropdown-item" href="404.html">404 Error Page</a></li>
                 <li><a class="dropdown-item" href="coming-soon.html">Coming Soon Page</a></li>
                 <li><a class="dropdown-item" href="maintenance.html">Maintenance Page</a></li>
@@ -132,7 +107,7 @@
       <a href="home-2.html" class="offcanvas-title">
         <img src="assets/images/logo.svg" alt="TenderJoy" height="40">
       </a>
-      <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <button type="button" class="tj-mobile-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <ul class="navbar-nav">
@@ -147,18 +122,6 @@
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
       </ul>
       <div class="mt-4 pt-3 border-top">
-        <div class="d-flex align-items-center justify-content-between mb-3">
-          <span class="fw-semibold">Color Theme:</span>
-          <button class="btn-ctrl theme-toggle-btn" aria-label="Toggle theme">
-            <i class="bi bi-moon-stars-fill"></i>
-          </button>
-        </div>
-        <div class="d-flex align-items-center justify-content-between mb-4">
-          <span class="fw-semibold">Layout Direction:</span>
-          <button class="btn-ctrl btn-ctrl-rtl rtl-toggle-btn">
-            <span class="dir-label">RTL</span>
-          </button>
-        </div>
         <a href="contact.html" class="btn-tj btn-tj-accent w-100 justify-content-center">
           <i class="bi bi-calendar2-check"></i>
           <span>Book Tropical Bar Event</span>
@@ -170,7 +133,7 @@
   <!-- =========================================================================
        3. Full-Screen Tropical Hero Section (Home 2)
        ========================================================================= -->
-  <section class="hero-home-2">
+<section class="hero-home-2 tj-hero-home tj-hero-home--paradise">
     <div class="container">
       <div class="row align-items-center gy-5">
         <div class="col-lg-6">
@@ -183,16 +146,16 @@
           </p>
           <div class="d-flex flex-wrap gap-3">
             <a href="menu.html" class="btn-tj btn-tj-accent btn-tj-lg">
-              <span>View Signature Drink Menu</span>
+              <span>Explore Signature Drinks</span>
               <i class="bi bi-arrow-right"></i>
             </a>
             <a href="contact.html" class="btn-tj btn-tj-outline-white btn-tj-lg">
               <i class="bi bi-compass"></i>
-              <span>Visit The Lounge</span>
+              <span>Find Our Store</span>
             </a>
           </div>
 
-          <div class="d-flex align-items-center gap-4 mt-5 pt-3 border-top border-white-50">
+          <div class="d-flex align-items-start gap-4 mt-5 pt-3 border-top border-white-50 home2-hero-stats">
             <div>
               <div class="fs-4 fw-bold text-tj-accent">4.9 / 5.0</div>
               <div class="small text-white-50">Google Reviews (800+)</div>
@@ -300,7 +263,7 @@
           <div class="tj-card product-card">
             <div class="product-img-wrap">
               <span class="badge-tag badge-accent product-badge-float">Signature</span>
-              <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80" alt="Coconut Mojito Mocktail">
+              <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=800&q=80" alt="Coconut Mojito Mocktail">
               <span class="product-price-pill">&#8377;110</span>
             </div>
             <div class="product-body">
@@ -525,16 +488,16 @@
   <!-- =========================================================================
        10. Guest Testimonials
        ========================================================================= -->
-  <section class="section-padding">
+  <section class="section-padding" id="home2-testimonials">
     <div class="container">
-      <div class="row justify-content-center text-center section-header">
-        <div class="col-lg-8">
+      <div class="row justify-content-center text-center section-header home2-testimonial-header">
+        <div class="col-lg-8 home2-testimonial-header-inner">
           <span class="badge-tag mb-2">Guest Impressions</span>
           <h2 class="section-title">Loved by Bengaluru's Wellness Community</h2>
         </div>
       </div>
 
-      <div class="row g-4">
+      <div class="row g-4 align-items-stretch">
         <div class="col-md-6">
           <div class="tj-card testimonial-card">
             <div class="testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
