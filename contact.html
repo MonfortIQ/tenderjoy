@@ -141,9 +141,9 @@
   <!-- Contact Information Cards -->
   <section class="section-padding-sm pt-5">
     <div class="container">
-      <div class="row g-4">
+      <div class="row g-4 contact-info-grid">
         <!-- Card 1: Phone -->
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-6">
           <div class="tj-card p-4 text-center">
             <div class="service-icon-box mx-auto mb-3"><i class="bi bi-telephone-fill"></i></div>
             <h4 class="h6 fw-bold mb-1">Direct Phone</h4>
@@ -153,7 +153,7 @@
         </div>
 
         <!-- Card 2: Email -->
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-6">
           <div class="tj-card p-4 text-center">
             <div class="service-icon-box mx-auto mb-3"><i class="bi bi-envelope-fill"></i></div>
             <h4 class="h6 fw-bold mb-1">Email Inquiries</h4>
@@ -163,7 +163,7 @@
         </div>
 
         <!-- Card 3: Flagship Store -->
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-6">
           <div class="tj-card p-4 text-center">
             <div class="service-icon-box mx-auto mb-3"><i class="bi bi-geo-alt-fill"></i></div>
             <h4 class="h6 fw-bold mb-1">Flagship Juice Bar</h4>
@@ -173,7 +173,7 @@
         </div>
 
         <!-- Card 4: Operating Hours -->
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-6">
           <div class="tj-card p-4 text-center">
             <div class="service-icon-box mx-auto mb-3"><i class="bi bi-clock-history"></i></div>
             <h4 class="h6 fw-bold mb-1">Operating Hours</h4>
@@ -209,7 +209,7 @@
               <div class="row g-3">
                 <div class="col-sm-6">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="contactName" name="name" placeholder="Your Name" minlength="2" maxlength="60" pattern="[A-Za-z][A-Za-z .'-]{1,59}" autocomplete="name" required>
+                    <input type="text" class="form-control" id="contactName" name="name" placeholder=" " minlength="2" maxlength="60" pattern="[A-Za-z][A-Za-z .'-]{1,59}" autocomplete="name" required>
                     <label for="contactName">Full Name *</label>
                     <div class="invalid-feedback">Please enter your name.</div>
                   </div>
@@ -217,7 +217,7 @@
 
                 <div class="col-sm-6">
                   <div class="form-floating">
-                    <input type="email" class="form-control" id="contactEmail" name="email" placeholder="name@example.com" required>
+                    <input type="email" class="form-control" id="contactEmail" name="email" placeholder=" " required>
                     <label for="contactEmail">Email Address *</label>
                     <div class="invalid-feedback">Please provide a valid email.</div>
                   </div>
@@ -225,7 +225,7 @@
 
                 <div class="col-sm-6">
                   <div class="form-floating">
-                    <input type="tel" class="form-control" id="contactPhone" name="phone" placeholder="Phone Number" pattern="(?:\+91[\s-]?)?[6-9][0-9]{9}" inputmode="tel" autocomplete="tel" required>
+                    <input type="tel" class="form-control" id="contactPhone" name="phone" placeholder=" " pattern="(?:\+91[\s-]?)?[6-9][0-9]{9}" inputmode="tel" autocomplete="tel" required>
                     <label for="contactPhone">Phone (10-Digit Mobile) *</label>
                     <div class="invalid-feedback">Please enter a valid 10-digit number.</div>
                   </div>
@@ -233,21 +233,20 @@
 
                 <div class="col-sm-6">
                   <div class="form-floating">
-                    <select class="form-select enquiry-type-select" id="contactEnquiryType" name="enquiry_type" required>
-                      <option value="" disabled selected>Select Enquiry Type</option>
+                    <select class="form-select enquiry-type-select" id="contactEnquiryType" name="enquiry_type" aria-label="Enquiry Type" required>
+                      <option value="" selected>Select Enquiry Type</option>
                       <option value="General Question">General Question</option>
                       <option value="Daily Subscription">Daily Subscription</option>
                       <option value="Franchise Opportunity">Franchise Opportunity</option>
                       <option value="Feedback & Review">Feedback &amp; Review</option>
                     </select>
-                    <label for="contactEnquiryType">Enquiry Type *</label>
                     <div class="invalid-feedback">Please select an enquiry type.</div>
                   </div>
                 </div>
 
                 <div class="col-12">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="contactSubject" name="subject" placeholder="Subject" required>
+                    <input type="text" class="form-control" id="contactSubject" name="subject" placeholder=" " required>
                     <label for="contactSubject">Subject Line *</label>
                     <div class="invalid-feedback">Please enter a subject.</div>
                   </div>
@@ -255,7 +254,7 @@
 
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Your Message" id="contactMessage" name="message" style="height: 140px" required></textarea>
+                    <textarea class="form-control" placeholder=" " id="contactMessage" name="message" style="height: 140px" required></textarea>
                     <label for="contactMessage">How can we help you? *</label>
                     <div class="invalid-feedback">Please enter your message.</div>
                   </div>
@@ -289,7 +288,7 @@
               <div class="row g-3">
                 <div class="col-sm-6">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="caterName" name="organizer_name" placeholder="Organizer Name" minlength="2" maxlength="60" pattern="[A-Za-z][A-Za-z .'-]{1,59}" autocomplete="name" required>
+                    <input type="text" class="form-control" id="caterName" name="organizer_name" placeholder=" " minlength="2" maxlength="60" pattern="[A-Za-z][A-Za-z .'-]{1,59}" autocomplete="name" required>
                     <label for="caterName">Organizer / Host Name *</label>
                     <div class="invalid-feedback">Please enter organizer name.</div>
                   </div>
@@ -297,7 +296,7 @@
 
                 <div class="col-sm-6">
                   <div class="form-floating">
-                    <input type="email" class="form-control" id="caterEmail" name="organizer_email" placeholder="name@example.com" required>
+                    <input type="email" class="form-control" id="caterEmail" name="organizer_email" placeholder=" " required>
                     <label for="caterEmail">Email Address *</label>
                     <div class="invalid-feedback">Please provide a valid email.</div>
                   </div>
@@ -305,7 +304,7 @@
 
                 <div class="col-sm-6">
                   <div class="form-floating">
-                    <input type="tel" class="form-control" id="caterPhone" name="phone" placeholder="Phone Number" pattern="(?:\+91[\s-]?)?[6-9][0-9]{9}" inputmode="tel" autocomplete="tel" required>
+                    <input type="tel" class="form-control" id="caterPhone" name="phone" placeholder=" " pattern="(?:\+91[\s-]?)?[6-9][0-9]{9}" inputmode="tel" autocomplete="tel" required>
                     <label for="caterPhone">Contact Phone *</label>
                     <div class="invalid-feedback">Please enter contact phone.</div>
                   </div>
@@ -322,7 +321,7 @@
                 <div class="col-sm-6">
                   <div class="form-floating">
                     <select class="form-select" id="caterType" name="event_type" required>
-                      <option value="" disabled selected>Select Event Type</option>
+                      <option value="" selected>Select Event Type</option>
                       <option value="Wedding / Sangeet / Mehendi">Wedding / Sangeet / Mehendi</option>
                       <option value="Corporate Summit / Campus">Corporate Summit / Campus</option>
                       <option value="Private Birthday / Villa Party">Private Birthday / Villa Party</option>
@@ -350,7 +349,7 @@
 
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Catering Requirements" id="caterNotes" name="catering_requirements" style="height: 140px" required></textarea>
+                    <textarea class="form-control" placeholder=" " id="caterNotes" name="catering_requirements" style="height: 140px" required></textarea>
                     <label for="caterNotes">Location, special drink choices or shell engraving requests *</label>
                     <div class="invalid-feedback">Please describe your event requirements.</div>
                   </div>
