@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div class="tj-footer-bottom">
           <span>© 2026 TenderJoy Beverages Pvt. Ltd. All rights reserved.</span>
-          <nav aria-label="Legal links"><a href="${footerPath('404.html')}">Privacy Policy</a><a href="${footerPath('404.html')}">Terms of Service</a><a href="${footerPath('contact.html')}">Support</a></nav>
         </div>
       </div>
     `;
@@ -109,6 +108,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!document.querySelector('.back-to-top')) {
     document.body.insertAdjacentHTML('beforeend', '<a href="#" class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>');
+  }
+
+  /* Upgrade the standalone utility pages to the same shared navbar. */
+  const legacyHeader = document.querySelector('header.tj-header');
+  if (legacyHeader && !legacyHeader.querySelector('.tj-navbar')) {
+    legacyHeader.className = 'tj-header';
+    legacyHeader.innerHTML = `
+      <div class="container">
+        <nav class="navbar navbar-expand-lg tj-navbar py-2">
+          <a class="navbar-brand tj-logo" href="${footerPath('index.html')}">
+            <img src="${footerPath('assets/images/logo.svg')}" alt="TenderJoy Logo" class="site-logo-img" data-logo-light="${footerPath('assets/images/logo.svg')}" data-logo-dark="${footerPath('assets/images/logo-light.svg')}">
+          </a>
+          <button class="navbar-toggler border-0 shadow-none p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#tjMobileNav" aria-controls="tjMobileNav" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-1 text-tj-primary"></i>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarMain">
+            <ul class="navbar-nav align-items-center gap-1">
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="${footerPath('index.html')}">Home 1 – Fresh Juice Landing</a></li><li><a class="dropdown-item" href="${footerPath('home-2.html')}">Home 2 – Tropical Juice Bar</a></li></ul></li>
+              <li class="nav-item"><a class="nav-link" href="${footerPath('about.html')}">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="${footerPath('menu.html')}">Menu</a></li>
+              <li class="nav-item"><a class="nav-link" href="${footerPath('services.html')}">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="${footerPath('locations.html')}">Locations</a></li>
+              <li class="nav-item"><a class="nav-link" href="${footerPath('blog.html')}">Blog</a></li>
+              <li class="nav-item"><a class="nav-link" href="${footerPath('pricing.html')}">Pricing</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="${footerPath('404.html')}">404 Error Page</a></li><li><a class="dropdown-item" href="${footerPath('coming-soon.html')}">Coming Soon Page</a></li><li><a class="dropdown-item" href="${footerPath('maintenance.html')}">Maintenance Page</a></li></ul></li>
+              <li class="nav-item"><a class="nav-link" href="${footerPath('contact.html')}">Contact</a></li>
+            </ul>
+          </div>
+          <div class="d-none d-lg-flex align-items-center gap-2"><a href="${footerPath('menu.html')}" class="btn-tj btn-tj-primary btn-tj-sm"><span>Order Fresh</span><i class="bi bi-arrow-right"></i></a></div>
+        </nav>
+      </div>`;
+
+    if (!document.querySelector('#tjMobileNav')) {
+      document.body.insertAdjacentHTML('beforeend', `
+        <div class="offcanvas offcanvas-end tj-mobile-menu" tabindex="-1" id="tjMobileNav" aria-labelledby="tjMobileNavLabel">
+          <div class="offcanvas-header border-bottom"><a href="${footerPath('index.html')}" class="offcanvas-title" id="tjMobileNavLabel"><img src="${footerPath('assets/images/logo.svg')}" alt="TenderJoy" height="40"></a><button type="button" class="tj-mobile-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></div>
+          <div class="offcanvas-body"><ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="${footerPath('index.html')}">Home 1 (Fresh Juice)</a></li>
+            <li class="nav-item"><a class="nav-link" href="${footerPath('home-2.html')}">Home 2 (Tropical Bar)</a></li>
+            <li class="nav-item"><a class="nav-link" href="${footerPath('about.html')}">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="${footerPath('menu.html')}">Our Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="${footerPath('services.html')}">Services &amp; Catering</a></li>
+            <li class="nav-item"><a class="nav-link" href="${footerPath('blog.html')}">Articles &amp; Wellness</a></li>
+            <li class="nav-item"><a class="nav-link" href="${footerPath('pricing.html')}">Pricing &amp; Packages</a></li>
+            <li class="nav-item"><a class="nav-link" href="${footerPath('contact.html')}">Contact Us</a></li>
+          </ul><div class="mt-4 pt-3 border-top"><a href="${footerPath('menu.html')}" class="btn-tj btn-tj-primary w-100 justify-content-center tj-mobile-order"><i class="bi bi-cup-straw"></i><span>Order Fresh</span></a></div></div>
+        </div>`);
+    }
   }
 
   /* Add the shared controls to every visible desktop navbar. */
@@ -138,8 +185,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  document.querySelectorAll('.tj-mobile-menu a.nav-link[href$="locations.html"]').forEach(link => {
-    link.closest('.nav-item')?.remove();
+  document.querySelectorAll('.tj-mobile-menu .navbar-nav').forEach(menu => {
+    menu.innerHTML = `
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle" href="#mobileHomeSubmenu" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="mobileHomeSubmenu">Home</a>
+        <div class="collapse mobile-submenu" id="mobileHomeSubmenu">
+          <a class="nav-link" href="${footerPath('index.html')}">Home 1 – Fresh Juice Landing</a>
+          <a class="nav-link" href="${footerPath('home-2.html')}">Home 2 – Tropical Juice Bar</a>
+        </div>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="${footerPath('about.html')}">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="${footerPath('menu.html')}">Menu</a></li>
+      <li class="nav-item"><a class="nav-link" href="${footerPath('services.html')}">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="${footerPath('blog.html')}">Blog</a></li>
+      <li class="nav-item"><a class="nav-link" href="${footerPath('pricing.html')}">Pricing</a></li>
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle" href="#mobilePagesSubmenu" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="mobilePagesSubmenu">Pages</a>
+        <div class="collapse mobile-submenu" id="mobilePagesSubmenu">
+          <a class="nav-link" href="${footerPath('404.html')}">404 Error Page</a>
+          <a class="nav-link" href="${footerPath('coming-soon.html')}">Coming Soon Page</a>
+          <a class="nav-link" href="${footerPath('maintenance.html')}">Maintenance Page</a>
+        </div>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="${footerPath('contact.html')}">Contact</a></li>
+    `;
   });
 
   document.querySelectorAll('.tj-mobile-menu .theme-toggle-btn').forEach(button => {

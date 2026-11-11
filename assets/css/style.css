@@ -738,6 +738,19 @@ html[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
   border-bottom: 1px solid var(--tj-border-light);
 }
 
+.tj-mobile-menu .mobile-submenu {
+  margin: 0.15rem 0 0.35rem;
+  padding-inline-start: 0.85rem;
+  border-inline-start: 2px solid var(--tj-border);
+}
+
+.tj-mobile-menu .mobile-submenu .nav-link {
+  padding: 0.6rem 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--tj-border-light);
+}
+
 .tj-mobile-menu .tj-mobile-order {
   margin-top: 1rem;
 }
@@ -1108,6 +1121,16 @@ html[dir="rtl"] .hero-floating-badge-2 {
 /* Service Card */
 .service-card {
   padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Related-service cards use different description lengths; keep their CTAs
+   aligned to the same baseline. */
+.service-card > a.btn-tj {
+  margin-top: auto;
 }
 
 #services-grid > .container > .row {
@@ -1281,7 +1304,7 @@ html[data-theme="dark"] .article-body-content blockquote {
   width: 100%;
 }
 
-#home2-testimonials .row > [class*="col-"] {
+#home2-testimonials .home2-testimonial-cards > [class*="col-"] {
   display: flex;
 }
 
@@ -1668,12 +1691,15 @@ html[data-theme="dark"] .article-body-content blockquote {
 .pricing-business-meta {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  align-items: start;
+  align-items: center;
   gap: 0.75rem;
-  min-height: 3rem;
+  min-height: 2.25rem;
 }
 
 .pricing-business-meta .badge-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
   max-width: 100%;
   line-height: 1.2;
 }
@@ -1782,6 +1808,13 @@ html[data-theme="dark"] .article-body-content blockquote {
 #pricing-section .table thead > tr > th {
   background-color: var(--tj-surface-muted) !important;
   color: var(--tj-text);
+}
+
+/* Keep every beverage category pill on one line. The responsive wrapper still
+   handles horizontal overflow on narrow screens. */
+#pricing-section .table tbody > tr > td:nth-child(2),
+#pricing-section .table tbody > tr > td:nth-child(2) .badge-tag {
+  white-space: nowrap;
 }
 
 #pricing-section .table a {
@@ -1933,6 +1966,33 @@ html[data-theme="dark"] .article-body-content blockquote {
 
 [data-theme="dark"] #contact-form .invalid-feedback {
   color: #FFB7A9;
+}
+
+/* Keep every Contact form field consistent when the browser autofills it. */
+[data-theme="dark"] #contact-form .form-floating > label::after {
+  background-color: #10291A !important;
+}
+
+[data-theme="dark"] #contact-form input:-webkit-autofill,
+[data-theme="dark"] #contact-form input:-webkit-autofill:hover,
+[data-theme="dark"] #contact-form input:-webkit-autofill:focus,
+[data-theme="dark"] #contact-form textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #10291A inset !important;
+  -webkit-text-fill-color: #F4FFF7 !important;
+  caret-color: #F4FFF7;
+}
+
+[data-theme="light"] #contact-form .form-floating > label::after {
+  background-color: #FFFFFF !important;
+}
+
+[data-theme="light"] #contact-form input:-webkit-autofill,
+[data-theme="light"] #contact-form input:-webkit-autofill:hover,
+[data-theme="light"] #contact-form input:-webkit-autofill:focus,
+[data-theme="light"] #contact-form textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #FFFFFF inset !important;
+  -webkit-text-fill-color: #193725 !important;
+  caret-color: #193725;
 }
 
 .form-feedback-alert {
@@ -2150,6 +2210,51 @@ html[data-theme="dark"] .article-body-content blockquote {
 
   #catering-packages .pricing-card {
     padding: 1.5rem 1.25rem;
+  }
+}
+
+/* Home 2 tablet view: keep the signature section to one complete row. */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .home2-signature-grid > [class*="col-"]:nth-child(3) {
+    display: none !important;
+  }
+
+  #testimonials .testimonial-card {
+    padding: 1.25rem;
+  }
+
+  #testimonials .testimonial-author > div {
+    min-width: 0;
+  }
+
+  #testimonials .testimonials-grid > [class*="col-"] {
+    flex: 0 0 50%;
+    width: 50%;
+    max-width: 50%;
+  }
+
+  #testimonials .testimonials-grid > [class*="col-"]:nth-child(3) {
+    display: none !important;
+  }
+
+  .home1-category-grid > [class*="col-"]:nth-child(3) {
+    display: none !important;
+  }
+
+  .home1-location-cards > [class*="col-"]:nth-child(3) {
+    display: none !important;
+  }
+
+  .tj-hero-home--fresh .hero-img-box {
+    transform: none;
+  }
+
+  .tj-hero-home--fresh .hero-floating-badge-1 {
+    inset-inline-start: 0;
+  }
+
+  .tj-hero-home--fresh .hero-floating-badge-2 {
+    inset-inline-end: 0;
   }
 }
 
@@ -2480,6 +2585,29 @@ html[data-theme="dark"] .article-body-content blockquote {
   z-index: 1;
 }
 
+/* Coming Soon notification field: keep the placeholder readable on the dark
+   launch card in both themes. */
+[data-theme="dark"] .tj-special-hero input[type="email"] {
+  color: #F4FFF7 !important;
+  background-color: #081A10 !important;
+  border-color: #397A50 !important;
+}
+
+[data-theme="dark"] .tj-special-hero input[type="email"]::placeholder {
+  color: #B8D9C2 !important;
+  opacity: 1 !important;
+}
+
+[data-theme="light"] .tj-special-hero input[type="email"] {
+  color: #193725 !important;
+  background-color: #FFFFFF !important;
+}
+
+[data-theme="light"] .tj-special-hero input[type="email"]::placeholder {
+  color: #536A5D !important;
+  opacity: 1 !important;
+}
+
 .tj-reveal {
   opacity: 0;
   transform: translateY(1.25rem);
@@ -2682,6 +2810,37 @@ html[data-theme="dark"] .article-body-content blockquote {
   box-shadow: 0 0 0 3px rgba(184, 217, 75, 0.16);
 }
 
+html[data-theme="dark"] .tj-footer-newsletter-form input[type="email"] {
+  color: #F4FFF7 !important;
+  background-color: #081A10;
+}
+
+html[data-theme="dark"] .tj-footer-newsletter-form input[type="email"]::placeholder {
+  color: #B8D9C2 !important;
+  opacity: 1;
+}
+
+html[data-theme="light"] .tj-footer-newsletter-form input[type="email"] {
+  color: #193725 !important;
+}
+
+html[data-theme="light"] .tj-footer-newsletter-form input[type="email"]::placeholder {
+  color: #536A5D !important;
+  opacity: 1;
+}
+
+/* Keep the newsletter hint readable even when the shared footer inherits a
+   page-specific input color or a browser autofill style. */
+#premium-footer .tj-footer-newsletter-form input[type="email"]::placeholder {
+  color: #B8D9C2 !important;
+  opacity: 1 !important;
+  font-weight: 500;
+}
+
+html[data-theme="light"] #premium-footer .tj-footer-newsletter-form input[type="email"]::placeholder {
+  color: #536A5D !important;
+}
+
 .tj-footer-newsletter-form .btn-tj {
   border: 0;
   white-space: nowrap;
@@ -2833,6 +2992,7 @@ html[dir="rtl"] .tj-footer-contact-row:hover {
 
 .tj-footer-hours {
   display: flex;
+  width: min(100%, 24rem);
   gap: 0.8rem;
   margin-top: 0.5rem;
   padding: 1rem;
@@ -2859,12 +3019,13 @@ html[dir="rtl"] .tj-footer-contact-row:hover {
 .tj-footer-bottom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
   padding-top: 1.35rem;
   border-top: 1px solid color-mix(in srgb, var(--footer-text) 16%, transparent);
   color: var(--footer-muted);
   font-size: 0.78rem;
+  text-align: center;
 }
 
 .tj-footer-bottom nav {
@@ -2888,6 +3049,7 @@ html[dir="rtl"] .tj-footer-contact-row:hover {
 @media (max-width: 991.98px) {
   .tj-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tj-footer-brand { grid-column: 1 / -1; }
+  .tj-footer-contact { grid-column: 1 / -1; }
   .tj-footer-newsletter { align-items: flex-start; flex-direction: column; }
   .tj-footer-newsletter-form { width: min(100%, 38rem); }
 
