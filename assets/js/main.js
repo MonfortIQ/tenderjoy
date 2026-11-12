@@ -18,6 +18,23 @@ document.addEventListener('DOMContentLoaded', () => {
     x: 'https://x.com/tenderjoyjuices',
     youtube: 'https://www.youtube.com/@tenderjoyjuices'
   };
+
+  // Apply the same official social destinations to static page footers and
+  // standalone social groups that still contain placeholder href="#" values.
+  const socialIconLinks = {
+    'bi-instagram': footerSocialLinks.instagram,
+    'bi-facebook': footerSocialLinks.facebook,
+    'bi-twitter-x': footerSocialLinks.x,
+    'bi-youtube': footerSocialLinks.youtube
+  };
+  document.querySelectorAll('.social-links a, .tj-special-hero a[aria-label]').forEach(link => {
+    const icon = link.querySelector('i');
+    const socialUrl = icon && Object.entries(socialIconLinks).find(([iconClass]) => icon.classList.contains(iconClass))?.[1];
+    if (!socialUrl) return;
+    link.href = socialUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+  });
   const currentFooter = document.querySelector('footer');
 
   if (currentFooter) {
